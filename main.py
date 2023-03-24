@@ -40,7 +40,6 @@ class AndroidCamera(Camera):
         self.counter += 1
         flipped = np.flip(frame_rgb, 0)
         buf = flipped.tostring()
-        self.texture.blit_buffer(buf, colorfmt='rgb', bufferfmt='ubyte')
 
 class MyLayout(BoxLayout):
     pass
