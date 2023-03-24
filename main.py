@@ -9,12 +9,6 @@ import cv2
 from android.permissions import request_permissions, Permission
 import time
 
-request_permissions([
-    Permission.CAMERA,
-    Permission.WRITE_EXTERNAL_STORAGE,
-    Permission.READ_EXTERNAL_STORAGE
-])
-
 Builder.load_file("myapplayout.kv")
 
 class AndroidCamera(Camera):
@@ -54,6 +48,10 @@ class MyLayout(BoxLayout):
 
 class MyApp(App):
     def build(self):
+        request_permissions([
+        Permission.CAMERA,
+        Permission.WRITE_EXTERNAL_STORAGE,
+        Permission.READ_EXTERNAL_STORAGE ])
         return MyLayout()
 
 
